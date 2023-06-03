@@ -11,6 +11,8 @@ def factorize(num):
     Returns:
         A tuple of two factors if the number is not a prime, or None if the number is prime.
     '''
+    if num < 4:
+        return None
     for divisor in range(2, int(num**0.5) + 1):
         if num % divisor == 0:
             return (divisor, num // divisor)
@@ -45,7 +47,7 @@ if __name__ == "__main__":
         factors = factorize(num)
         if factors:
             factor1, factor2 = factors
-            print(f"{num} = {factor1} * {factor2}")
+            print(f"{num}={factor1}*{factor2}")
 
         '''
         Check if the elapsed time exceeds 5 seconds.
